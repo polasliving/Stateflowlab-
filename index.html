@@ -10,13 +10,13 @@
 :root {
   --ink: #1a1a1a;
   --ink-mid: #3a3a3a;
-  --ink-soft: #6b6b6b;
-  --ink-mute: #9a9a9a;
+  --ink-soft: #4a4a4a;
+  --ink-mute: #777777;
   --paper: #f7f5f0;
   --paper-warm: #efe9de;
   --gold: #b89a5c;
   --gold-light: #d4b87a;
-  --gold-pale: #f0e6cc;
+  --gold-pale: #e8d8b0;
   --line: rgba(26,26,26,0.12);
   --line-s: rgba(26,26,26,0.25);
 }
@@ -26,7 +26,7 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   background: var(--paper);
   color: var(--ink);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
   font-weight: 300;
   overflow-x: hidden;
@@ -396,11 +396,11 @@ nav {
   font-size: 0.78rem; color: var(--gold); font-weight: 400; letter-spacing: 0.06em;
 }
 .plan-card.feat .plan-who { color: var(--gold-light); }
-.plan-hook { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.85; font-weight: 300; flex: 1; }
+.plan-hook { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.85; font-weight: 300; flex: 1; }
 .plan-card.feat .plan-hook { color: rgba(247,245,240,0.62); }
 .plan-feats { list-style: none; display: flex; flex-direction: column; gap: 9px; }
 .plan-feats li {
-  font-size: 0.76rem; color: var(--ink-soft);
+  font-size: 0.84rem; color: var(--ink-soft);
   display: flex; gap: 8px; align-items: flex-start; line-height: 1.55; font-weight: 300;
 }
 .plan-feats li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
@@ -417,6 +417,90 @@ nav {
 .plan-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(184,154,92,0.06); }
 .plan-card.feat .plan-btn { background: var(--gold); color: var(--paper); border-color: var(--gold); }
 .plan-card.feat .plan-btn:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+/* ══ PLANS INTRO & QA ══ */
+.plans-intro-block {
+  max-width: 760px; margin: 0 auto 60px;
+  padding: 44px 52px; border: 1px solid var(--line);
+  background: var(--paper-warm);
+  border-left: 3px solid var(--gold);
+}
+.plans-intro-block p {
+  font-family: 'Noto Serif TC', serif; font-size: 0.95rem;
+  line-height: 2; color: var(--ink-mid); font-weight: 300;
+}
+.plans-intro-block strong { color: var(--ink); font-weight: 500; }
+
+.plans-qa-block {
+  max-width: 760px; margin: 0 auto 56px;
+}
+.plans-qa-hdr {
+  font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold);
+  padding: 4px 12px; display: inline-block; margin-bottom: 28px;
+}
+.qa-item {
+  padding: 24px 0; border-bottom: 1px solid var(--line);
+}
+.qa-item:last-child { border-bottom: none; }
+.qa-q {
+  font-family: 'Noto Serif TC', serif; font-size: 0.9rem;
+  font-weight: 500; color: var(--ink); margin-bottom: 12px;
+  display: flex; gap: 10px;
+}
+.qa-q span { color: var(--gold); flex-shrink: 0; }
+.qa-a {
+  font-size: 0.82rem; color: var(--ink-soft); line-height: 1.9;
+  padding-left: 26px;
+}
+.qa-a ul { list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 5px; }
+.qa-a ul li { display: flex; gap: 8px; }
+.qa-a ul li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+.qa-tag {
+  display: inline-block; font-size: 0.68rem; letter-spacing: 0.14em;
+  background: rgba(184,154,92,0.12); color: var(--gold);
+  padding: 2px 8px; margin-top: 4px;
+}
+
+/* ══ PLAN CATEGORY LABEL ══ */
+.plan-category {
+  max-width: 1000px; margin: 0 auto 0;
+  padding: 16px 0 20px;
+  display: flex; align-items: center; gap: 16px;
+}
+.plan-category-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 400; letter-spacing: 0.14em; color: var(--ink);
+}
+.plan-category-bar {
+  flex: 1; height: 1px; background: var(--line);
+}
+
+/* ══ 單點突破 2-col grid ══ */
+.plans-grid-2 {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+  border: 1px solid var(--line); max-width: 1000px; margin: 0 auto;
+}
+.plans-grid-2 .plan-card:last-child { border-right: none; }
+
+/* ══ PAYMENT BOX ══ */
+.payment-box {
+  max-width: 1000px; margin: 40px auto 0;
+  padding: 24px 32px; border: 1px solid var(--line);
+  display: flex; align-items: center; gap: 20px;
+  background: var(--paper-warm);
+}
+.payment-box-label {
+  font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); white-space: nowrap; flex-shrink: 0;
+}
+.payment-box-divider {
+  width: 1px; height: 36px; background: var(--line); flex-shrink: 0;
+}
+.payment-box-info {
+  font-size: 0.82rem; color: var(--ink-mid); letter-spacing: 0.06em;
+}
+.payment-box-info strong { color: var(--ink); font-weight: 500; }
 
 /* ══ WHO IS IT FOR ══ */
 .who-section { padding: 90px 48px; background: var(--paper-warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -438,8 +522,9 @@ nav {
 .who-item h4 {
   font-family: 'Noto Serif TC', serif;
   font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 8px;
+  text-align: center;
 }
-.who-item p { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.75; font-weight: 300; }
+.who-item p { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.75; font-weight: 300; text-align: center; }
 
 /* ══ CTA ══ */
 .cta-section {
@@ -524,8 +609,12 @@ footer { background: #111; color: rgba(247,245,240,0.42); padding: 56px 48px 36p
   .test-q:last-child { border-bottom: none; }
   .plans-section { padding: 72px 24px; }
   .plans-grid { grid-template-columns: 1fr; }
+  .plans-grid-2 { grid-template-columns: 1fr; }
   .plan-card { border-right: none; border-bottom: 1px solid var(--line); }
   .plan-card:last-child { border-bottom: none; }
+  .plans-intro-block { padding: 28px 24px; }
+  .payment-box { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .payment-box-divider { display: none; }
   .who-section { padding: 72px 24px; }
   .who-grid { grid-template-columns: 1fr 1fr; }
   .who-item { border-bottom: 1px solid var(--line); }
@@ -543,6 +632,34 @@ footer { background: #111; color: rgba(247,245,240,0.42); padding: 56px 48px 36p
   .who-item:last-child { border-bottom: none; }
   .footer-cols { flex-direction: column; gap: 28px; }
   .plans-grid { grid-template-columns: 1fr; }
+}
+
+/* ══ MOBILE FONT & SPACING ENHANCEMENTS ══ */
+@media (max-width: 768px) {
+  body { font-size: 15px; line-height: 1.9; }
+  .section-desc { font-size: 0.9rem; line-height: 2; }
+  .plan-hook { font-size: 0.88rem; line-height: 1.95; }
+  .plan-feats li { font-size: 0.82rem; line-height: 1.65; }
+  .res-item p { font-size: 0.9rem; line-height: 1.8; }
+  .what-card p { font-size: 0.86rem; line-height: 1.9; }
+  .qa-a { font-size: 0.86rem; line-height: 2; }
+  .plan-price { font-size: 2.6rem; }
+  .plan-name { font-size: 0.9rem; }
+  .plans-hdr { margin-bottom: 36px; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .hero-btns .btn-dark, .hero-btns .btn-outline { width: 100%; max-width: 320px; justify-content: center; }
+  .cta-btns .btn-gold, .cta-btns .btn-ghost { width: 100%; max-width: 320px; justify-content: center; }
+  .testi-section { padding: 64px 20px; }
+  .who-section { padding: 64px 20px; }
+  .plans-section { padding: 64px 20px; }
+  .brand-section { padding: 64px 20px; }
+  .resonance-conclusion { padding: 28px 24px; }
+  .payment-box { padding: 20px 20px; }
+  .plans-intro-block { padding: 28px 20px; }
+  .plans-qa-block { max-width: 100%; }
+  .triangle-wrap { max-width: 340px; }
+  .tri-node { padding: 10px 18px; font-size: 0.82rem; }
 }
 
 /* ══ TESTIMONIALS ══ */
@@ -770,81 +887,198 @@ footer { background: #111; color: rgba(247,245,240,0.42); padding: 56px 48px 36p
 <!-- ══ PLANS ══ -->
 <section class="plans-section" id="plans">
   <div class="plans-inner">
+
+    <!-- 區塊標題 -->
     <div class="plans-hdr">
       <p class="section-eyebrow fi">服務方案</p>
       <h2 class="section-title fi">找到適合你的<br>那一層深度</h2>
-      <p class="section-desc fi">從輕量體驗到完整旗艦版——每個層級都有明確的任務。</p>
     </div>
-    <div class="plans-grid fi">
 
-      <!-- 499 -->
+    <!-- 導言 -->
+    <div class="plans-intro-block fi">
+      <p>
+        很多人努力生活，以為人生的困惑，<br>
+        是因為自己不夠努力，<br>
+        卻從來沒有思考或是看過自己的<strong>人生結構</strong>。<br><br>
+        4848 做的事情很簡單：<br>
+        把 <strong>人生節奏 × 性格特質 × 決策邏輯</strong> 整理成一份可以理解的結構報告。<br>
+        當你看懂自己的節奏，很多答案其實早就在那裡。
+      </p>
+    </div>
+
+    <!-- 4848 簡介 Q&A -->
+    <div class="plans-qa-block fi" style="transition-delay:.08s">
+      <div class="plans-qa-hdr">4848 是什麼</div>
+      <div class="qa-item">
+        <div class="qa-q"><span>Q</span>為什麼是科學，不是玄學？</div>
+        <div class="qa-a">
+          4848 採結構化推論，先有科學驗證，再釋出結論。
+          <ul>
+            <li>有底座（theory bases）</li>
+            <li>有規則（rules）</li>
+            <li>有交叉驗證（cross-validation）</li>
+            <li>有輸出邊界（boundary &amp; safety）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q"><span>Q</span>跟坊間命理差在哪？</div>
+        <div class="qa-a">
+          坊間常見：單一系統、單一口訣、單一路徑。<br>
+          4848 的差異：多底座整合（不是拼湊）→ 研發人獨創母系統做出統一判讀語言，
+          所以能跨領域：人、節律（時間窗口）、決策（科學導航），完美融合詮釋、解讀。
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q"><span>Q</span>跟一般 AI 差在哪？</div>
+        <div class="qa-a">
+          一般 AI 會說話、會安慰、會編故事，但沒有固定判讀規則，也無法追溯，給的答案多未經驗證。<br><br>
+          4848：先跑「底座＋規則」→ 再做「數據交叉驗證」→ 最後才輸出「可反推結論」。<br>
+          <span class="qa-tag">4848 不是聊天，是科學引擎。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 人生狀態 ── -->
+    <div class="plan-category fi" style="transition-delay:.1s">
+      <div class="plan-category-label">人生狀態</div>
+      <div class="plan-category-bar"></div>
+    </div>
+
+    <div class="plans-grid fi" style="transition-delay:.12s">
+
+      <!-- ① 499 快速體驗版 -->
       <div class="plan-card">
-        <span class="plan-tag">入口體驗</span>
+        <span class="plan-tag">① 入口體驗</span>
         <div>
           <div class="plan-price"><sup>NT$</sup>499</div>
-          <div class="plan-name">探索版</div>
-          <p class="plan-who">適合第一次接觸的人</p>
+          <div class="plan-name">快速體驗版</div>
+          <p class="plan-who">適合想先了解自己目前生命狀態的人</p>
         </div>
         <p class="plan-hook">
-          快速理解你目前的生命節奏與發展方向。<br><br>
-          500 元以內，安全試試看。不用相信命理，你只需要好奇自己。
+          擷取過往人生每 10 年重要事件或節點的分析。<br><br>
+          快速看見你的人生結構與今年的運勢位置，找到一個值得留意的方向。
         </p>
         <ul class="plan-feats">
-          <li>基礎人生節律分析</li>
-          <li>當前狀態解讀</li>
-          <li>一個值得留意的發展提醒</li>
+          <li>人生每 10 年重要節點解析</li>
+          <li>今年運勢位置判讀</li>
+          <li>一個值得留意的發展方向</li>
         </ul>
         <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank" class="plan-btn">選擇此方案</a>
       </div>
 
-      <!-- 999 -->
+      <!-- ② 999 問題聚焦版 -->
       <div class="plan-card">
-        <span class="plan-tag">深度分析</span>
+        <span class="plan-tag">② 問題聚焦</span>
         <div>
           <div class="plan-price"><sup>NT$</sup>999</div>
-          <div class="plan-name">深度版</div>
-          <p class="plan-who">適合有明確問題的人</p>
+          <div class="plan-name">問題聚焦版</div>
+          <p class="plan-who">適合想拆解人生底盤的人</p>
+          <p style="font-size:0.72rem; color:var(--ink-mute); margin-top:4px; font-weight:300; letter-spacing:0.04em;">原價 NT$1,599</p>
         </div>
         <p class="plan-hook">
-          深入解析你目前最困擾的一個人生議題。<br><br>
-          為什麼換了工作還是卡住？為什麼感情一直重複同樣模式？
+          不只看你是誰，更看你「為什麼會在這個狀態」。<br><br>
+          掌握性格底盤、人生慣性、節律變化，洞察現在所在的時間窗與內在驅動力，幫你看清自己，也看懂下一步方向。
         </p>
         <ul class="plan-feats">
-          <li>個人特質分析</li>
-          <li>生命節奏深度解讀</li>
-          <li>未來兩年的發展重點提醒</li>
-          <li>主題聚焦收斂</li>
+          <li>性格底盤與人生慣性分析</li>
+          <li>節律變化深度解讀</li>
+          <li>時間窗口判讀</li>
+          <li>內在驅動力洞察</li>
+          <li>下一步方向建議</li>
         </ul>
         <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank" class="plan-btn">選擇此方案</a>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:-8px;">
+          <a href="https://docs.google.com/document/d/1LrQ6YQaxuYGMaBOp06shzNOdDj9igmHZ/edit" target="_blank" style="font-size:0.7rem;color:var(--gold);text-decoration:none;letter-spacing:0.06em;border-bottom:1px solid rgba(184,154,92,0.35);padding-bottom:1px;transition:opacity 0.2s;" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">▸ 範本 A 工作事業版</a>
+          <a href="https://docs.google.com/document/d/16vP0RKq_rTNGEDOvtKVLhEUYl_tDa8Sj/edit" target="_blank" style="font-size:0.7rem;color:var(--gold);text-decoration:none;letter-spacing:0.06em;border-bottom:1px solid rgba(184,154,92,0.35);padding-bottom:1px;transition:opacity 0.2s;" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">▸ 範本 B 感情關係版</a>
+        </div>
       </div>
 
-      <!-- 1599 FEATURED -->
+      <!-- ③ 1599 深度解析旗艦版 FEATURED -->
       <div class="plan-card feat">
-        <div class="plan-badge">⭐ 最多人選擇</div>
-        <span class="plan-tag">旗艦完整版</span>
+        <div class="plan-badge">★ 期間限定優惠</div>
+        <span class="plan-tag">③ 旗艦完整版</span>
         <div>
           <div class="plan-price"><sup>NT$</sup>1599</div>
-          <div class="plan-name">旗艦決策版</div>
-          <p class="plan-who" style="color:var(--gold-light)">完整人生結構分析</p>
+          <div class="plan-name">深度解析旗艦版</div>
+          <p class="plan-who" style="color:var(--gold-light)">適合想真正理解卡點、正在做重大決定的人</p>
+          <p style="font-size:0.72rem; color:rgba(247,245,240,0.45); margin-top:4px; font-weight:300; letter-spacing:0.04em;">原價 NT$2,199｜期間限定優惠價</p>
         </div>
         <p class="plan-hook">
-          透過<strong style="color:var(--gold-light)">金三角決策模型</strong>整合三條線：<br>
-          生命節律 × 個人特質 × 人生選擇。<br><br>
-          我們不是算命。<br>
-          我們給你一條可以驗證的 90 天行動路線。
+          系統性解析你的人生結構，看懂結構與卡點，並給出 <strong style="color:var(--gold-light)">30 天可驗證的行動方向</strong>，讓決定不再只靠感覺。<br><br>
+          從 <strong style="color:var(--gold-light)">生命節奏 × 個人特質 × 現實選擇</strong> 三個層面整合分析，協助你做出重要決策。
         </p>
         <ul class="plan-feats">
-          <li>個人生命結構完整分析</li>
-          <li>人生節奏全面解析</li>
-          <li>決策方向深度判讀</li>
-          <li>30 / 60 / 90 天行動路線</li>
-          <li>可驗證行為預測 + 風險判讀</li>
-          <li>終局判斷 + 一份完整決策報告</li>
+          <li>人生結構系統性解析</li>
+          <li>卡點根源深度判讀</li>
+          <li>生命節奏 × 個人特質 × 現實選擇 三線整合</li>
+          <li>30 天可驗證行動方向</li>
+          <li>重要決策結構化輔助</li>
         </ul>
         <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank" class="plan-btn">選擇旗艦方案 →</a>
       </div>
 
     </div>
+
+    <!-- ── 單點突破 ── -->
+    <div class="plan-category fi" style="transition-delay:.16s; margin-top: 52px;">
+      <div class="plan-category-label">單點突破</div>
+      <div class="plan-category-bar"></div>
+    </div>
+
+    <div class="plans-grid-2 fi" style="transition-delay:.18s">
+
+      <!-- 單點 499 -->
+      <div class="plan-card">
+        <span class="plan-tag">① 精準分析</span>
+        <div>
+          <div class="plan-price"><sup>NT$</sup>499</div>
+          <div class="plan-name">精準分析</div>
+          <p class="plan-who">針對一個核心問題</p>
+        </div>
+        <p class="plan-hook">
+          針對一個核心問題，提供精準的執行建議與判斷方向。<br><br>
+          不繞彎路，直接看清楚那一個讓你卡住的點。
+        </p>
+        <ul class="plan-feats">
+          <li>單一核心問題精準解析</li>
+          <li>具體執行建議</li>
+          <li>判斷方向輸出</li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank" class="plan-btn">選擇此方案</a>
+      </div>
+
+      <!-- 單點 1599 -->
+      <div class="plan-card">
+        <span class="plan-tag">② 進階分析</span>
+        <div>
+          <div class="plan-price"><sup>NT$</sup>1599</div>
+          <div class="plan-name">進階分析</div>
+          <p class="plan-who">客製化個別事況突破建議</p>
+        </div>
+        <p class="plan-hook">
+          客製化個別事況突破建議，提供各節點具體突破方法。<br><br>
+          適合需要更深層拆解、逐步突破的問題情境。
+        </p>
+        <ul class="plan-feats">
+          <li>客製化事況分析</li>
+          <li>各節點具體突破方法</li>
+          <li>深層結構判讀</li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank" class="plan-btn">選擇此方案</a>
+      </div>
+
+    </div>
+
+    <!-- 匯款資訊 -->
+    <div class="payment-box fi" style="transition-delay:.2s">
+      <div class="payment-box-label">匯款帳號</div>
+      <div class="payment-box-divider"></div>
+      <div class="payment-box-info">
+        行號：<strong>013 國泰世華</strong>&ensp;｜&ensp;帳號：<strong>007700002068</strong>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -978,15 +1212,15 @@ footer { background: #111; color: rgba(247,245,240,0.42); padding: 56px 48px 36p
       <div class="footer-brand-sub">4848 · 人生決策結構報告</div>
       <p class="footer-desc">
         融合四柱八字、吠陀系統與行為科學的正式報告服務。<br>
-        聯繫信箱：<a href="/cdn-cgi/l/email-protection#f699c2c5cec3c3c1b6919b979f9ad895999b" class="footer-email"><span class="__cf_email__" data-cfemail="026d36313a37373542656f636b6e2c616d6f">[email&#160;protected]</span></a>
+        聯繫信箱：<a href="mailto:o438557@gmail.com" class="footer-email">o438557@gmail.com</a>
       </p>
     </div>
     <div class="footer-cols">
       <div>
         <p class="f-col-title">方案</p>
-        <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank">499 探索版</a>
-        <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank">999 深度版</a>
-        <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank">1599 旗艦決策版</a>
+        <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank">499 快速體驗版</a>
+        <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank">999 問題聚焦版</a>
+        <a href="https://docs.google.com/forms/d/1cH6WO0bRm9BaPtOT01PiVcTbRmFNtQhkycJHpPt7qh0/edit" target="_blank">1599 深度解析旗艦版</a>
       </div>
       <div>
         <p class="f-col-title">入口</p>
@@ -1003,7 +1237,6 @@ footer { background: #111; color: rgba(247,245,240,0.42); padding: 56px 48px 36p
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
 
 function openModal(idx) {
@@ -1049,7 +1282,7 @@ setTimeout(() => {
 
 // Nav shrink on scroll
 const nav = document.getElementById('mainnav');
-tListener('scroll', () => {
+window.addEventListener('scroll', () => {
   const isW = window.innerWidth > 960;
   nav.style.padding = window.scrollY > 50
     ? (isW ? '12px 48px' : '10px 24px')
